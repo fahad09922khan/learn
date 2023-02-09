@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid bg-dark">
+        <h1 class="text-white text-align-center">Todo List</h1>
+    </div>
+
+    <div class="container-fluid" id="app">
+        <form class="form">
+            <input v-model="newTask">
+            <input type="button" class="btn btn-success" value="add" v-on:click="addItem">
+        </form>
+        <ul id="taskList">
+        </ul>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                newTask: ''
+            },
+            methods: {
+                addItem: () => {
+                    let newItem = document.createElement('li');
+                    newItem.innerText = app.newTask;
+                    document.getElementById('taskList').appendChild(newItem);
+                    app.newTask = '';
+                }
+            }
+        })
+    </script>
+
+
+
+</body>
+
+</html>

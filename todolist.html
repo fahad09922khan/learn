@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid bg-dark">
+        <h1 class="text-white text-align-center">Todo List</h1>
+    </div>
+
+    <div class="container-fluid">
+        <form class="form">
+            <input type="text" id="newTask">
+            <input type="button" class="btn btn-success" value="add" id="addButton">
+        </form>
+        <ul id="taskList">
+
+        </ul>
+    </div>
+    </form>
+
+    <script>
+        let addButton = document.getElementById('addButton');
+        let taskList = document.getElementById('taskList');
+        addButton.onclick = () => {
+            let taskField = document.getElementById('newTask');
+            let taskItem = document.createElement('li');
+            taskItem.innerText = taskField.value;
+            taskList.appendChild(taskItem);
+            taskField.value = '';
+        }
+    </script>
+
+
+    <!-- <h3 class="te"></h3> -->
+
+
+
+
+
+</body>
+
+</html>
